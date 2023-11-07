@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class TransactionInsertion {
 
@@ -17,7 +18,7 @@ public class TransactionInsertion {
     public static void deposit(String transactionID, String name, double amount)
     {
         String query = "INSERT INTO transactions (transactionID, name, amount) VALUES (?, ?, ?)";
-
+        boolean flag = false;
         double sum = 0;
         sum = sum + amount;
 
@@ -31,6 +32,7 @@ public class TransactionInsertion {
             preparedStatement.executeUpdate();
             connection.commit();
             System.out.println("Transaction recorded");
+            JOptionPane.showMessageDialog(null, "Transaction Recorded");
         } catch(SQLException e) {
 
             e.printStackTrace();
@@ -56,11 +58,13 @@ public class TransactionInsertion {
             {
                 connection.commit();
                 System.out.println("Withdrawal successful");
+                JOptionPane.showMessageDialog(null, "Withdrawal successful");
             }
             else
             {
                 connection.rollback();
                 System.out.println("Withdrawal failed");
+                JOptionPane.showMessageDialog(null, "Withdrawal failed");
             }
         } catch (SQLException e)
         {

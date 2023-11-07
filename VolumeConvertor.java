@@ -13,17 +13,17 @@ public class VolumeConvertor extends JFrame
     private String[] lengthUnits = {"Milliliter", "Liter", "Gallon", "cubic meter", "cubic centimeter"};
     private double conversionMatrix[][] =
             {
-                    {1, 0.1, 0.000001, 0.00328084, 0.0393701},   // Milliliters to [ml, l, gal, m³, cm³]
-                    {10, 1, 0.00001, 0.0328084, 0.393701},       // Centiliters to [ml, l, gal, m³, cm³]
-                    {1000000, 100000, 1, 3280.84, 39370.1},     // Gallons to [ml, l, gal, m³, cm³]
-                    {304.8, 30.48, 0.0003048, 1, 12},            // cubic meter to [ml, l, gal, m³, cm³]
-                    {25.4, 2.54, 0.0000254, 0.0833333, 1}        // cubic centimeter to [ml, l, gal, m³, cm³]
+                    {1, 0.001, 0.000001, 0.00328084, 0.0393701},   // Milliliters to [ml, l, gal, m³, cm³]
+                    {1000, 1, 0.001, 3.28084, 39.3701},       // Liters to [ml, l, gal, m³, cm³]
+                    {1000000, 1000, 1, 3280.84, 39370.1},     // Gallons to [ml, l, gal, m³, cm³]
+                    {304.8, 0.03048, 0.0003048, 1, 12},            // cubic meter to [ml, l, gal, m³, cm³]
+                    {25.4, 0.00254, 0.0000254, 0.0833333, 1}        // cubic centimeter to [ml, l, gal, m³, cm³]
             };
 
     public VolumeConvertor()
     {
         setTitle("Length Converter");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(400, 300);
         setLocationRelativeTo(null);
 

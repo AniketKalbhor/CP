@@ -23,7 +23,7 @@ public class TimeConvertor extends JFrame {
     public TimeConvertor()
     {
         setTitle("Time Converter");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(400, 300);
         setLocationRelativeTo(null);
 

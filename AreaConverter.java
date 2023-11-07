@@ -24,7 +24,7 @@ public class AreaConverter extends JFrame
     public AreaConverter()
     {
         setTitle("Area Converter");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(400, 300);
         setLocationRelativeTo(null);
 
